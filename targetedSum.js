@@ -4,18 +4,10 @@
 findTarget([2, 7, 5, 3], 5);
 
 function findTarget(arr, target) {
-  let indices = [];
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
-      let sum = 0;
-      sum = arr[j] + arr[i];
-      if (sum === target) {
-        if (i > j) {
-          indices = [j, i];
-        } else {
-          indices = [i, j];
-        }
-        return indices;
+      if (arr[j] + arr[i] === target) {
+        return [i, j];
       }
     }
   }
